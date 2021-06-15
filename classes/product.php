@@ -6,7 +6,15 @@ class Product {
     public $cost;
 
     function __construct($cloType, $cloCost) {
-        $this->type = $cloType;
+        $this->setType($cloType);
         $this->cost = $cloCost;
+    }
+
+    public function setType($value) {
+        $this->type = $value;
+    }
+
+    public function getType() {
+        return $this->type;
     }
 }
