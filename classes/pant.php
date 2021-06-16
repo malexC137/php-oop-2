@@ -6,12 +6,14 @@ class Pant extends Product {
     public $pantType;
     public $color;
     public $size;
+    public $price;
 
-    function __construct($cloType, $cloCost, $panType, $panColor, $panSize) {
-        parent::__construct($cloType, $cloCost);
+    function __construct($cloType, $panType, $panColor, $panSize, $panPrice) {
+        parent::__construct($cloType);
 
         $this->shirtType = $panType;
         $this->color = $panColor;
         $this->size = $panSize;
+        $this->price = $panPrice;
     }
 }

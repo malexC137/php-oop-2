@@ -5,20 +5,22 @@ class Customer {
     public $surname;
     public $email;
     private $id;
-    public $totalPrice;
 
-    function __construct($custName, $custSurname, $custEmail, $totPrice) {
+    function __construct($custName, $custSurname, $custEmail) {
         $this->setName($custName);
         $this->setSurname($custSurname);
         $this->setEmail($custEmail);
         $this->generateUserId();
-        $this->totalPrice = $totPrice;
     }
 
     public function setName($value) {
         $this->name = $value;
 
         $this->generateUserId();
+
+        if ((strlen($value)) > 10) {
+            throw new Exception("Il nome inserito è troppo lungo");
+        }
     }
 
     public function getName() {
@@ -29,6 +31,10 @@ class Customer {
         $this->surname = $value;
 
         $this->generateUserId();
+
+        if (!ctype_alpha($value)) {
+            throw new Exception("Il cognome può contenere solo lettere");
+        }
     }
 
     public function getSurname() {
@@ -37,6 +43,10 @@ class Customer {
 
     public function setEmail($value) {
         $this->email = $value;
+
+        if (!strstr($value, "@")) {
+            throw new Exception("L'indirizzo e-mail inserito non è valido");
+        }
     }
 
     public function getEmail() {
