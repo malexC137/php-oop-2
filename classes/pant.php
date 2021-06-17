@@ -3,9 +3,9 @@
 require_once(__DIR__ . "/product.php");
 
 class Pant extends Product {
-    public $pantType;
-    public $color;
-    public $size;
+    protected $pantType;
+    protected $color;
+    protected $size;
     public $price;
 
     function __construct($cloType, $panType, $panColor, $panSize, $panPrice) {

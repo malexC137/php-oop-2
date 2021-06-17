@@ -1,8 +1,8 @@
 <?php
 
 class Product {
-    public $brand = "Boolwear";
-    public $type;
+    protected $brand = "Boolwear";
+    protected $type;
 
     function __construct($cloType) {
         $this->setType($cloType);

@@ -4,27 +4,10 @@ require_once(__DIR__ . "/customer.php");
 
 class CustomerPremium extends Customer {
 
-    public $codeDiscount;
-    public $discount;
+    protected $codeDiscount;
+    protected $discount;
     
     function __construct($custName, $custSurname, $custEmail) {
         parent::__construct($custName, $custSurname, $custEmail);
-
     }
-
-    // public function setCodeDiscount($value) {
-    //     if ($value = "BOOL20") {
-    //         $discount = 0.8;
-    //     } else if ($value = "BOOL50") {
-    //         $discount = 0.5;
-    //     } else {
-    //         $discount = 0;
-    //     }
-    // }
-
-    // public function getCodeDiscount() {
-    //     return $this->codeDiscount;
-    // }
-
-
 }
